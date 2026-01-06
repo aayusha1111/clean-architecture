@@ -39,8 +39,6 @@ class _ProductPageState extends State<ProductPage> {
               builder: (context, state) {
                 return ToggleButtons(
                   isSelected: [
-                    // themeController.value == ThemeMode.light,
-                    // themeController.value == ThemeMode.dark,
                     state.themeMode == ThemeMode.light,
                     state.themeMode == ThemeMode.dark,
                   ],
@@ -56,13 +54,11 @@ class _ProductPageState extends State<ProductPage> {
                   ],
                   onPressed: (index) {
                     if (index == 0) {
-                      //themeController.setLight();
                       context.read<ThemeBloc>().add(SetLightTheme());
                     } else {
-                      //themeController.setDark();
                       context.read<ThemeBloc>().add(SetDarkTheme());
                     }
-                    setState(() {}); // updates the toggle UI
+                    
                   },
                 );
               },

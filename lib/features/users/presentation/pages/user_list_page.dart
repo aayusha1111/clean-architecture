@@ -28,8 +28,6 @@ class _UsersListPageState extends State<UsersListPage> {
               builder: (context, state) {
                 return ToggleButtons(
                   isSelected: [
-                    // themeController.value == ThemeMode.light,
-                    // themeController.value == ThemeMode.dark,
                     state.themeMode == ThemeMode.light,
                     state.themeMode == ThemeMode.dark,
                   ],
@@ -45,10 +43,8 @@ class _UsersListPageState extends State<UsersListPage> {
                   ],
                   onPressed: (index) {
                     if (index == 0) {
-                      //themeController.setLight();
                       context.read<ThemeBloc>().add(SetLightTheme());
                     } else {
-                      //themeController.setDark();
                       context.read<ThemeBloc>().add(SetDarkTheme());
                     }
                   },

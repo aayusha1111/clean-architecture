@@ -3,12 +3,11 @@ import 'package:clean_architecture/core/theme/theme_bloc.dart';
 import 'package:clean_architecture/core/theme/theme_state.dart';
 import 'package:clean_architecture/features/product/presentation/bloc/product_bloc.dart';
 import 'package:clean_architecture/features/users/presentation/bloc/user_bloc.dart';
-import 'package:clean_architecture/features/users/presentation/pages/user_page.dart';
+import 'package:clean_architecture/features/users/presentation/pages/practice_table_page.dart';
 import 'package:clean_architecture/injection_container.dart' as di;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-// final themeController=ThemeController();
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,12 +29,12 @@ class MyApp extends StatelessWidget {
       child: BlocBuilder<ThemeBloc,ThemeState>(
         builder: (context, state) {
           return MaterialApp(
-          
+          debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: AppTheme.light,
           darkTheme: AppTheme.dark,
           themeMode: state.themeMode,
-          home: SignupPage()
+          home: UserPage()
           );
         },
         
